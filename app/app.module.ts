@@ -2,16 +2,18 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
+import { ListExampleComponent }  from './list-example/list-example.component';
 
 @NgModule({
 	//Dependency modules
-  	imports:      [ 
+  	imports: [ 
   		BrowserModule
   	],
   	
   	//Components, pipes, directives
   	declarations: [ 
-  		AppComponent
+  		AppComponent,
+      ListExampleComponent
   	],
   	
   	//Services
