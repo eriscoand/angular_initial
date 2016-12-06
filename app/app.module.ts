@@ -22,7 +22,7 @@ import { ListExampleComponent }  from './list-example/list-example.component';
   	],
 
   	//Root component
-  	bootstrap:    [ 
+  	bootstrap: [ 
   		AppComponent
   	]
 

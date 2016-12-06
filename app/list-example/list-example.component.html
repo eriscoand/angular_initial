@@ -1,5 +1,6 @@
 <ul>
 	<li *ngFor="let example of exampleList">
 		{{example}}
+		<button (click)="delete(example)">Delete</button>
 	</li>
 </ul>

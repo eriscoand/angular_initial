@@ -5,5 +5,8 @@
 </header>
 
 <section>
-	<list-example></list-example>
+	<list-example 
+		[exampleList] = "exampleList"
+		(emitDelete) = emitDelete($event)>
+	</list-example>
 </section>

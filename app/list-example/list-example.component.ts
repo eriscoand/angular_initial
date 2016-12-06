@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
 	selector: "list-example",
 	templateUrl: "./app/list-example/list-example.component.html"
 })
 
-export class ListExampleComponent implements OnInit{
+export class ListExampleComponent{
 
-	exampleList: string[];
+	@Input() exampleList: string[];
 
-	ngOnInit(): void{
-		this.exampleList = [
-			"Teddy Riner",
-			"Uini Antonio"
-		];
+	@Output() emitDelete: EventEmitter<string> = new EventEmitter();
+
+	delete(example:string): void{
+		this.emitDelete.emit(example)
 	}
+
 }
