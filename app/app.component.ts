@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'list',
   templateUrl: "./app/app.component.html",
   styles: [
   	"h1 {color: red;}"

@@ -1,19 +1,23 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { ListExampleComponent }  from './list-example/list-example.component';
+import { BindingComponent } from './binding/binding.component';
 
 @NgModule({
 	//Dependency modules
   	imports: [ 
-  		BrowserModule
+  		BrowserModule,
+      FormsModule
   	],
   	
   	//Components, pipes, directives
   	declarations: [ 
   		AppComponent,
-      ListExampleComponent
+      ListExampleComponent,
+      BindingComponent
   	],
   	
   	//Services
@@ -23,8 +27,12 @@ import { ListExampleComponent }  from './list-example/list-example.component';
 
   	//Root component
   	bootstrap: [ 
+
+      //Switch beetween root components to see examples
+
   		AppComponent
-  	]
+  	  //BindingComponent
+    ]
 
 })
 export class AppModule { }

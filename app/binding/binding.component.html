@@ -1,0 +1,48 @@
+<div>
+
+	<div>
+		<strong>{{message}}</strong>
+	</div>
+
+	<br/>
+
+	<div>
+		<strong>Properties</strong>
+		<br/>
+		<textarea 	name="area" 
+					[cols]="getColumns()"
+					[rows]="getRows()">
+		</textarea>
+	</div>
+
+	<br/>
+
+	<div>
+		<strong>CSS</strong>
+		<span [class.message]="truecss">{{message}}</span>
+		<span [class.message]="falsecss">{{message}}</span>
+	</div>
+
+	<br/>
+
+	<div>
+		<strong>CSS 2</strong>
+		<span [style.color]="getColor()">{{message}}</span>
+	</div>
+
+	<br/>
+
+	<div>
+		<strong>Button</strong>
+		<button (click)="showMessage()">Show message</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<strong>Bidirectional</strong>
+		<input 	type="text" 
+				[(ngModel)] = "message"/>
+	</div>
+
+</div>
