@@ -8,10 +8,25 @@
 			(emitSave) = emitSave($event)></form-example>
 	</section>
 
-	<section>
-		<list-example 
-			[exampleList] = "exampleList"
-			(emitDelete) = emitDelete($event)>
-		</list-example>
-	</section>
+	<div class="row">
+		<div class="six columns">
+			<section>
+				<list-example 
+					[exampleList] = "exampleList"
+					(emitSelected) = emitSelected($event)>
+				</list-example>
+			</section>
+		</div>
+		<div class="six columns">
+			<section>
+				<detail-example
+					[example] = "example"
+					(emitDelete) = emitDelete($event)>
+				</detail-example>
+			</section>
+		</div>
+	</div>
+
+
+
 </div>

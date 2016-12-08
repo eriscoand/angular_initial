@@ -1,9 +1,65 @@
-<div>
+<form #formExample="ngForm" (ngSubmit)="save(formExample)" novalidate>
     <div>
-        <label for="">Input</label>
-        <input type="text" placeholder="Ex. Eric Risco" [(ngModel)]="text">
+        <div>
+            <label for="input1">Input 1</label>
+            <input  id="input1"
+                    name="input1"
+                    type="text" 
+                    placeholder="*" 
+                    ngModel
+                    required
+                    #input1="ngModel">
+            <div class="error" *ngIf="input1.touched && input1.invalid">
+                Input 1 is required!!
+            </div>
+        </div>
+        <div>
+            <label for="input2">Input 2</label>
+            <input  id="input2"
+                    name="input2"
+                    type="text" 
+                    placeholder="*" 
+                    ngModel
+                    required
+                    #input2="ngModel">
+            <div class="error" *ngIf="input2.touched && input2.invalid">
+                Input 2 is required!!
+            </div>
+        </div>
+        <div>
+            <label for="input3">Input 3</label>
+            <input  id="input3"
+                    name="input3"
+                    type="text" 
+                    placeholder="" 
+                    ngModel>
+        </div>
+        <div>
+            <label for="input4">Input 4</label>
+            <input  id="input4"
+                    name="input4"
+                    type="text" 
+                    placeholder="" 
+                    ngModel>
+        </div>
+        <div>
+            <label for="input5">Input 5</label>
+            <input  id="input5"
+                    name="input5"
+                    type="text" 
+                    placeholder="" 
+                    ngModel>
+        </div>
+        <div>
+            <label for="input6">Input 6</label>
+            <input  id="input6"
+                    name="input6"
+                    type="text" 
+                    placeholder="" 
+                    ngModel>
+        </div>
+        <div>
+            <button class="button-primary" [disabled]="formExample.invalid" type="submit">Save</button>
+        </div>
     </div>
-    <div>
-        <button (click)="save()">Save</button>
-    </div>
-</div>
+</form>

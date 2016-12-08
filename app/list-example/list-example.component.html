@@ -1,6 +1,5 @@
 <ul>
-	<li *ngFor="let example of exampleList">
-		{{example.name}}
-		<button (click)="delete(example.id)">Delete</button>
+	<li *ngFor="let example of exampleList" (click)="selected(example)">
+		{{example.input1}}
 	</li>
 </ul>

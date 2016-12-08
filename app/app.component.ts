@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ExamplesService, Example } from './examples.service';
+import { Example } from "./classes/examples";
+import { ExamplesService } from './examples.service';
 
 @Component({
   selector: 'list',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
 	name = 'Application Name'; 
 
 	exampleList: Example[];
+	example : Example;
 
 	constructor(private _examplesService: ExamplesService){};
 
@@ -24,22 +26,24 @@ export class AppComponent implements OnInit {
 		this._refresh();
 	}
 
-	emitSave(exampleName:string): void{
-
-        let example: Example = new Example();
-        example.name = exampleName;
-
+	emitSave(example:Example): void{
+		console.log(example);
 		this._examplesService
 			.pushExample(example)
 			.subscribe((example: Example) => this._refresh());
+	}
 
+	emitSelected(example:Example): void{
+		this.example = example;
 	}
 
 	emitDelete(exampleId:Number): void{
 		this._examplesService
 			.popExample(exampleId)
-			.subscribe((example: Example) => this._refresh());
-		this._refresh();
+			.subscribe((example: Example) => {
+				this.example = null;
+				this._refresh();
+			});
 	}
 
 }

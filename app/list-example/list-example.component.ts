@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
-import { Example } from "../examples.service";
+import { Example } from "../classes/examples";
 
 @Component({
 	selector: "list-example",
@@ -12,10 +12,10 @@ export class ListExampleComponent{
 
 	@Input() exampleList: Example[];
 
-	@Output() emitDelete: EventEmitter<string> = new EventEmitter();
+	@Output() emitSelected: EventEmitter<Example> = new EventEmitter();
 
-	delete(example:string): void{
-		this.emitDelete.emit(example)
+	selected(example: Example): void{
+		this.emitSelected.emit(example);
 	}
 
 }

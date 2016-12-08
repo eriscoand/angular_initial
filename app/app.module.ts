@@ -6,7 +6,10 @@ import { HttpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import { ListExampleComponent }  from './list-example/list-example.component';
 import { FormExampleComponent }  from './form-example/form-example.component';
+import { DetailExampleComponent }  from './detail-example/detail-example.component';
+
 import { BindingComponent } from './binding/binding.component';
+
 import { ExamplesService } from './examples.service';
 
 @NgModule({
@@ -22,6 +25,7 @@ import { ExamplesService } from './examples.service';
   		AppComponent,
       ListExampleComponent,
 			FormExampleComponent,
+			DetailExampleComponent,
       BindingComponent
   	],
   	

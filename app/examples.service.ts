@@ -3,19 +3,18 @@ import { Http } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 
-export class Example{
-    id: number;
-    name: string;
-}
+import { Example } from "./classes/examples";
 
 @Injectable()
 export class ExamplesService {
+
+    private _url: string = "http://localhost:3005/examples"; 
 
     constructor(private _httpService: Http) {}
         
     getExamples(): Observable<Example[]> {        
         return this._httpService
-                .get("http://localhost:3005/examples")
+                .get(this._url)
                 .map((data) => {
                     return data.json() as Example[];
                 });
@@ -23,7 +22,7 @@ export class ExamplesService {
 
     pushExample(example :Example): Observable<Example> {
         return this._httpService
-                .post("http://localhost:3005/examples", example)
+                .post(this._url, example)
                 .map((data) => {
                     return data.json() as Example;
                 });
@@ -31,7 +30,7 @@ export class ExamplesService {
 
     popExample(id :Number): Observable<any>{
         return this._httpService
-                .delete(`http://localhost:3005/examples/${id}`);
+                .delete(`${this._url}/${id}`);
     }
 
 }

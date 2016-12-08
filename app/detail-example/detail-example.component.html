@@ -1,0 +1,10 @@
+<div *ngIf = "example" >
+    <h5>
+        {{example?.input1}} {{example?.input2}} 
+    </h5>
+    <p>{{example?.input3}}</p>
+    <p>{{example?.input4}}</p>
+    <p>{{example?.input5}}</p>
+    <p>{{example?.input6}}</p>
+	<button (click)="delete(example.id)">Delete</button>
+</div> 
