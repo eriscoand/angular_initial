@@ -1,12 +1,17 @@
-<header>
-	<a href="{{url}}">
+<div class="container">
+	<header>
 		<h1>{{name}}</h1>
-	</a>
-</header>
+	</header>
 
-<section>
-	<list-example 
-		[exampleList] = "exampleList"
-		(emitDelete) = emitDelete($event)>
-	</list-example>
-</section>
+	<section>
+		<form-example
+			(emitSave) = emitSave($event)></form-example>
+	</section>
+
+	<section>
+		<list-example 
+			[exampleList] = "exampleList"
+			(emitDelete) = emitDelete($event)>
+		</list-example>
+	</section>
+</div>

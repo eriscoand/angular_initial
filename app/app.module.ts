@@ -1,28 +1,33 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { ListExampleComponent }  from './list-example/list-example.component';
+import { FormExampleComponent }  from './form-example/form-example.component';
 import { BindingComponent } from './binding/binding.component';
+import { ExamplesService } from './examples.service';
 
 @NgModule({
 	//Dependency modules
   	imports: [ 
   		BrowserModule,
-      FormsModule
+      FormsModule,
+			HttpModule
   	],
   	
   	//Components, pipes, directives
   	declarations: [ 
   		AppComponent,
       ListExampleComponent,
+			FormExampleComponent,
       BindingComponent
   	],
   	
   	//Services
   	providers: [
-
+			ExamplesService
   	],
 
   	//Root component

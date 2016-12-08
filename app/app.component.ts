@@ -1,33 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ExamplesService, Example } from './examples.service';
+
 @Component({
   selector: 'list',
   templateUrl: "./app/app.component.html",
-  styles: [
-  	"h1 {color: red;}"
-  ]
+  styles: [  ]
 })
 
 export class AppComponent implements OnInit { 
 	name = 'Application Name'; 
-	url = 'http://www.google.com';
 
-	exampleList: string[];
+	exampleList: Example[];
 
-	ngOnInit(): void{
-		this.exampleList = [
-			"Teddy Riner",
-			"Uini Antonio",
-			"Monkey D. Luffy",
-			"Roronoa Zoro",
-			"Anakin Skywalker",
-			"Luke Skywalker",
-			"Leia Skywalker"
-		];
+	constructor(private _examplesService: ExamplesService){};
+
+	private _refresh(): void{
+		this._examplesService.getExamples()
+							 .subscribe((exampleList: Example[]) => this.exampleList = exampleList);
 	}
 
-	emitDelete(example:string): void{
-		this.exampleList = this.exampleList.filter((c: string) => c !== example);
+	ngOnInit(): void{
+		this._refresh();
+	}
+
+	emitSave(exampleName:string): void{
+
+        let example: Example = new Example();
+        example.name = exampleName;
+
+		this._examplesService
+			.pushExample(example)
+			.subscribe((example: Example) => this._refresh());
+
+	}
+
+	emitDelete(exampleId:Number): void{
+		this._examplesService
+			.popExample(exampleId)
+			.subscribe((example: Example) => this._refresh());
+		this._refresh();
 	}
 
 }
