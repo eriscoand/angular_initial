@@ -3,30 +3,14 @@
 		<h1>{{name}}</h1>
 	</header>
 
+	<navigation>
+		
+	</navigation>
+
 	<section>
-		<form-example
-			(emitSave) = emitSave($event)></form-example>
+		<router-outlet>
+
+		</router-outlet>
 	</section>
-
-	<div class="row">
-		<div class="six columns">
-			<section>
-				<list-example 
-					[exampleList] = "exampleList"
-					(emitSelected) = emitSelected($event)>
-				</list-example>
-			</section>
-		</div>
-		<div class="six columns">
-			<section>
-				<detail-example
-					[example] = "example"
-					(emitDelete) = emitDelete($event)>
-				</detail-example>
-			</section>
-		</div>
-	</div>
-
-
 
 </div>

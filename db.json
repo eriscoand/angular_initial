@@ -46,24 +46,6 @@
     },
     {
       "id": 14
-    },
-    {
-      "input1": "a",
-      "input2": "a",
-      "input3": "",
-      "input4": "",
-      "input5": "",
-      "input6": "",
-      "id": 15
-    },
-    {
-      "input1": "a",
-      "input2": "b",
-      "input3": "c",
-      "input4": "d",
-      "input5": "e",
-      "input6": "f",
-      "id": 16
     }
   ]
 }

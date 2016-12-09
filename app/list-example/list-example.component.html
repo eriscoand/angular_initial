@@ -1,5 +1,19 @@
-<ul>
-	<li *ngFor="let example of exampleList" (click)="selected(example)">
-		{{example.input1}}
-	</li>
-</ul>
+<div class="row">
+	<div class="six columns">
+		<section>
+			<ul>
+				<li *ngFor="let example of exampleList" (click)="selected(example)">
+					{{example.input1}}
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div class="six columns">
+		<section>
+			<detail-example
+				[example] = "example"
+				(emitDelete) = emitDelete($event)>
+			</detail-example>
+		</section>
+	</div>
+</div>
