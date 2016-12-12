@@ -6,3 +6,9 @@ li:hover{
     background-color: #f4f4f4;
     cursor:pointer;
 }
+
+.icon{
+    border: none;
+    padding: 0px;
+    font-size: 15px
+}

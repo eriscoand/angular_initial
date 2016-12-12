@@ -1,8 +1,15 @@
+<button class="icon" (click)="changeOrder()">
+	<i 	class="fa"
+		aria-hidden="true"
+		[class.fa-sort-alpha-asc]="orderedSense !== 'asc'"
+		[class.fa-sort-alpha-desc]="orderedSense === 'asc'"></i>
+</button>
+
 <div class="row">
 	<div class="six columns">
 		<section>
 			<ul>
-				<li *ngFor="let example of exampleList" (click)="selected(example)">
+				<li *ngFor="let example of (exampleList | SortByName:orderedSense)" (click)="selected(example)">
 					{{example.input1}}
 				</li>
 			</ul>
