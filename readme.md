@@ -1,4 +1,4 @@
-#Initial clean project Angular 2
+# Initial clean project Angular 2
 
 > Similar to a contact app. With a internal DATABASE!!
 
@@ -6,5 +6,5 @@
 
 - npm start
 
-
 Have fun!
+
